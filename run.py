@@ -125,7 +125,7 @@ def main():
                      print(
                          f"Account name:{account.account_name}  User name: {account.user_name} Password:{account.password}")
                      print('\n')
-             else:
+            else:
                  print('\n')
                  print(
                      "You dont seem to have created an account.Sign up to create a new account.")
@@ -168,11 +168,11 @@ def main():
                                  print(
                                      f"Credential name:{credentials.credentials_name}  User name: {credentials.usr_name} Password:{credentials.password}")
                                  print('\n')
-                         else:
+                        else:
                              print('\n')
-                              print(
+                             print(
                                   "You don't seem to have created any account yet")
-                              print('\n')
+                             print('\n')
                     elif short_code == "ex":
                         print('\n')
                         print(
@@ -188,7 +188,7 @@ def main():
 
         elif short_code == "ex":
                    print(f"Thanks {user_name} for your time.I hope you enjoyed my service.Bye...")
-                    break
+                   break
         else:
                    print("I really didn't get that. Please use the short codes")
 
