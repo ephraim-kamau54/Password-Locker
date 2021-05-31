@@ -1,12 +1,11 @@
-import unittest  # Importing the unittest module
-from account import Account  # Importing the account class
-
+import unittest  
+from account import Account  
 
 class TestAccount(unittest.TestCase):
     def setUp(self):
 
         self.new_account = Account(
-            "Junior", "Kamau", "123456", "ephraimkamau54@gmail.com")  # create Account object
+            "Junior", "Kamau", "123456", "ephraimkamau54@gmail.com")  
 
     def test_init(self):
         '''
@@ -23,7 +22,7 @@ class TestAccount(unittest.TestCase):
         test_save_account test case to test if the account object is saved into
          the account list
         '''
-        self.new_account.save_account()  # saving the new account
+        self.new_account.save_account() 
         self.assertEqual(len(Account.account_list), 1)
 
     def tearDown(self):
@@ -39,7 +38,7 @@ class TestAccount(unittest.TestCase):
             '''
         self.new_account.save_account()
         test_account = Account("Test", "user", "0745734706",
-                               "test@user.com")  # new account
+                               "test@user.com")  
         test_account.save_account()
         self.assertEqual(len(Account.account_list), 2)
 
@@ -49,10 +48,10 @@ class TestAccount(unittest.TestCase):
             '''
         self.new_account.save_account()
         test_account = Account(
-            "Test", "user", "0745734706", "test@user.com")  # account
+            "Test", "user", "0745734706", "test@user.com")  
         test_account.save_account()
 
-        self.new_account.delete_account()  # Deleting an account object
+        self.new_account.delete_account()  
         self.assertEqual(len(Account.account_list), 1)
 
     def test_find_account_by_account_name(self):
@@ -62,7 +61,7 @@ class TestAccount(unittest.TestCase):
 
         self.new_account.save_account()
         test_account = Account("Test", "user", "0112045111",
-                               "test@user.com")  # new account
+                               "test@user.com")  
         test_account.save_account()
 
         found_account = Account.find_by_name("Test")
@@ -76,7 +75,7 @@ class TestAccount(unittest.TestCase):
 
         self.new_account.save_account()
         test_account = Account("Test", "user", "0711223344",
-                               "test@user.com")  # new account
+                               "test@user.com")  
         test_account.save_account()
 
         account_exists = Account.account_exist("0711223344")

@@ -1,12 +1,12 @@
-import unittest  # Importing the unittest module
-from credentials import Credentials  # Importing the account class
+import unittest  
+from credentials import Credentials  
 
 
 class TestCredentials(unittest.TestCase):
     def setUp(self):
 
         self.new_credentials = Credentials(
-            "junior", "kamau", "123456", "ephraimkamau54@gmail.com")  # create Account object
+            "junior", "kamau", "123456", "ephraimkamau54@gmail.com")  
 
     def test_init(self):
         '''
@@ -23,7 +23,7 @@ class TestCredentials(unittest.TestCase):
         test_save_account test case to test if the account object is saved into
          the account list
         '''
-        self.new_credentials.save_credentials()  # saving the new account
+        self.new_credentials.save_credentials()  
         self.assertEqual(len(Credentials.credentials_list), 1)
 
     def tearDown(self):
@@ -39,7 +39,7 @@ class TestCredentials(unittest.TestCase):
             '''
         self.new_credentials.save_credentials()
         test_credentials = Credentials(
-            "Test", "user", "0745734706", "test@user.com")  # new account
+            "Test", "user", "0745734706", "test@user.com")  
         test_credentials.save_credentials()
         self.assertEqual(len(Credentials.credentials_list), 2)
 
@@ -49,10 +49,10 @@ class TestCredentials(unittest.TestCase):
             '''
         self.new_credentials.save_credentials()
         test_credentials = Credentials(
-            "Test", "user", "0745734706", "test@user.com")  # account
+            "Test", "user", "0745734706", "test@user.com")  
         test_credentials.save_credentials()
 
-        self.new_credentials.delete_credentials()  # Deleting an account object
+        self.new_credentials.delete_credentials()  
         self.assertEqual(len(Credentials.credentials_list), 1)
 
     def test_find_credentials_by_credentials_name(self):
@@ -62,7 +62,7 @@ class TestCredentials(unittest.TestCase):
 
         self.new_credentials.save_credentials()
         test_credentials = Credentials(
-            "Test", "user", "0711223344", "test@user.com")  # new account
+            "Test", "user", "0711223344", "test@user.com") 
         test_credentials.save_credentials()
 
         found_credentials = Credentials.find_by_name("Test")
@@ -76,7 +76,7 @@ class TestCredentials(unittest.TestCase):
 
         self.new_credentials.save_credentials()
         test_credentials = Credentials(
-            "Test", "user", "0711223344", "test@user.com")  # new account
+            "Test", "user", "0711223344", "test@user.com")  
         test_credentials.save_credentials()
 
         credentials_exists = Credentials.credentials_exist("0711223344")
